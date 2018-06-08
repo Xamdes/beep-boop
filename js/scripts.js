@@ -11,6 +11,7 @@ $(function()
 
     var output = processInput(inputString,userName);
     $("#output").html(output);
+    $("#output-input").html(inputString);
   });
 });
 
@@ -46,26 +47,29 @@ function processInput(inputString,userName)
     for(var index = 0; index <= input; index++)
     {
       var indexArray = index.toString().split("");
+      var temp = "Output: "
+      output.push(listWrapper("Input: " + index.toString()));
       //If input is divisible by 3
       if(!(index%3) && index !=0)
       {
-        output.push(listWrapper("I'm sorry, "+userName+". I'm afraid I can't do that."));
+        temp+=("[\"I'm sorry, "+userName+". I'm afraid I can't do that.\"]");
       }
       //Number contains a 1
       else if(contains("1",indexArray))
       {
-        output.push(listWrapper("Boop!"));
+        temp+=("[\"Boop!\"]");
       }
       //Number contains a 0
       else if(contains("0",indexArray))
       {
-        output.push(listWrapper("Beep!"));
+        temp+=("[\"Beep!\"]");
       }
       //Output Number as is
       else
       {
-        output.push(listWrapper(index.toString()));
+        temp+=index.toString();
       }
+      output.push(listWrapper(temp));
     }
   }
 
