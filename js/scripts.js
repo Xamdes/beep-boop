@@ -9,20 +9,20 @@ $(function()
     {
       output += "I'm sorry, Dave. I'm afraid I can't do that.";
     }
-    //Number containbes a 1
+    //Number contains a 1
     else if(false)
     {
-
+      output += "Boop!";
     }
     //Number contains a 0
     else if(false)
     {
-
+      output += "Beep!";
     }
     //Output Number as is
     else
     {
-
+      output = input.toString();
     }
 
     $("#output").text(output);
