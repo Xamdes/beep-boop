@@ -1,0 +1,36 @@
+body  {
+  background-color: lightcyan;
+  font-size: 1.5em;
+  padding: 6px;
+  color: black;
+}
+
+.center-text  {
+  text-align: center;
+}
+
+.left-text {
+  text-align: left;
+}
+
+.initial-hide {
+  display: none;
+}
+
+.background-blue {
+  background-color: lightblue;
+}
+
+.panel-modifier  {
+  padding: 6px;
+}
+
+.btn-on {
+  background-color: PaleGreen;
+  font-size: 1em;
+}
+
+.btn-off {
+  background-color: Aqua;
+  font-size: 1em;
+}
