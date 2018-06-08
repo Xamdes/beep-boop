@@ -9,9 +9,18 @@
     <title>Beep Boop</title>
   </head>
   <body class="container-fluid">
-    <h1 class="Jumbotron background-blue">Beep Boop</h1>
-    <form class="panel panel-info panel-modifier" action="index.html" method="post">
-      
+    <h1 class="Jumbotron background-blue center-text">Beep Boop</h1>
+    <form id="input-form" class="panel panel-info panel-modifier background-blue" action="index.html" method="post">
+      <div>
+        <label for="input">Enter a number</label>
+        <input id="input" type="number">
+      </div>
+      <div>
+        <button class="btn btn-off"type="submit" name="button">Submit</button>
+      </div>
     </form>
+    <div class="panel panel-info panel-modifier">
+      <p>Output: <span id="output"></span></p>
+    </div>
   </body>
 </html>
