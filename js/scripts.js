@@ -3,7 +3,12 @@ $(function()
   $("#input-form").submit(function(event){
     event.preventDefault();
     var inputString = $("#input").val();
-    var output = processInput(inputString);
+    var userName = $("#user-name").val().trim();
+    if(userName === "")
+    {
+      userName = "Dave";
+    }
+    var output = processInput(inputString,userName);
     $("#output").text(output);
   });
 });
@@ -21,7 +26,7 @@ function contains(value,ptrArray)
   return returnValue;
 }
 
-function processInput(inputString)
+function processInput(inputString,userName)
 {
   var input = parseInt(inputString);
   var inputArray = inputString.split("");
@@ -34,7 +39,7 @@ function processInput(inputString)
   //If input is divisible by 3
   else if(!(input%3) && input !=0)
   {
-    output += "I'm sorry, Dave. I'm afraid I can't do that.";
+    output += "I'm sorry, "+userName+". I'm afraid I can't do that.";
   }
   //Number contains a 1
   else if(contains("1",inputArray))
