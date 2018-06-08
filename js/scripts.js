@@ -47,8 +47,7 @@ function processInput(inputString,userName)
     for(var index = 0; index <= input; index++)
     {
       var indexArray = index.toString().split("");
-      var temp = "Output: "
-      output.push(wrapper("li","Input: " + index.toString()));
+      var temp = ("Input: " + index.toString()+" | Output: ");
       //If input is divisible by 3
       if(!(index%3) && index !=0)
       {
