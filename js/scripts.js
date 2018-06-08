@@ -48,7 +48,7 @@ function processInput(inputString,userName)
     {
       var indexArray = index.toString().split("");
       var temp = "Output: "
-      output.push(listWrapper("Input: " + index.toString()));
+      output.push(wrapper("li","Input: " + index.toString()));
       //If input is divisible by 3
       if(!(index%3) && index !=0)
       {
@@ -69,14 +69,14 @@ function processInput(inputString,userName)
       {
         temp+=index.toString();
       }
-      output.push(listWrapper(temp));
+      output.push(wrapper("li",temp));
     }
   }
 
   return output;
 }
 
-function listWrapper(input)
+function wrapper(what,input)
 {
-  return ("<li>"+input+"</li>");
+  return ("<"+what+">"+input+"</"+what+">");
 }
