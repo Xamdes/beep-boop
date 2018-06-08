@@ -66,28 +66,7 @@ function smallToLargeLoop(input,userName)
   var output = [];
   for(var index = 0; index <= input; index++)
   {
-    var indexArray = index.toString().split("");
-    var temp = ("Input: " + index.toString()+" | Output: ");
-    //If input is divisible by 3
-    if(!(index%3) && index !=0)
-    {
-      temp+=("[\"I'm sorry, "+userName+". I'm afraid I can't do that.\"]");
-    }
-    //Number contains a 1
-    else if(contains("1",indexArray))
-    {
-      temp+=("[\"Boop!\"]");
-    }
-    //Number contains a 0
-    else if(contains("0",indexArray))
-    {
-      temp+=("[\"Beep!\"]");
-    }
-    //Output Number as is
-    else
-    {
-      temp+=index.toString();
-    }
+    var temp = branchInput(index,userName);
     output.push(wrapper("li",temp));
   }
   return output;
@@ -98,29 +77,35 @@ function largeToSmallLoop(input,userName)
   var output = [];
   for(var index = input; index >= 0; index--)
   {
-    var indexArray = index.toString().split("");
-    var temp = ("Input: " + index.toString()+" | Output: ");
-    //If input is divisible by 3
-    if(!(index%3) && index !=0)
-    {
-      temp+=("[\"I'm sorry, "+userName+". I'm afraid I can't do that.\"]");
-    }
-    //Number contains a 1
-    else if(contains("1",indexArray))
-    {
-      temp+=("[\"Boop!\"]");
-    }
-    //Number contains a 0
-    else if(contains("0",indexArray))
-    {
-      temp+=("[\"Beep!\"]");
-    }
-    //Output Number as is
-    else
-    {
-      temp+=index.toString();
-    }
+    var temp = branchInput(index,userName);
     output.push(wrapper("li",temp));
   }
   return output;
+}
+
+function branchInput(index,userName)
+{
+  var indexArray = index.toString().split("");
+  var temp = ("Input: " + index.toString()+" | Output: ");
+  //If input is divisible by 3
+  if(!(index%3) && index !=0)
+  {
+    temp+=("[\"I'm sorry, "+userName+". I'm afraid I can't do that.\"]");
+  }
+  //Number contains a 1
+  else if(contains("1",indexArray))
+  {
+    temp+=("[\"Boop!\"]");
+  }
+  //Number contains a 0
+  else if(contains("0",indexArray))
+  {
+    temp+=("[\"Beep!\"]");
+  }
+  //Output Number as is
+  else
+  {
+    temp+=index.toString();
+  }
+  return temp;
 }
