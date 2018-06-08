@@ -2,7 +2,9 @@ $(function()
 {
   $("#input-form").submit(function(event){
     event.preventDefault();
-    var input = parseInt($("#input").val());
+    var inputString = $("#input").val();
+    var input = parseInt(inputString);
+    var inputArray = inputString.split("");
     var output = "";
     //If input is divisible by 3
     if(!(input%3))
@@ -10,12 +12,12 @@ $(function()
       output += "I'm sorry, Dave. I'm afraid I can't do that.";
     }
     //Number contains a 1
-    else if(false)
+    else if(contains("1",inputArray))
     {
       output += "Boop!";
     }
     //Number contains a 0
-    else if(false)
+    else if(contains("0",inputArray))
     {
       output += "Beep!";
     }
@@ -28,3 +30,16 @@ $(function()
     $("#output").text(output);
   });
 });
+
+function contains(value,ptrArray)
+{
+  var returnValue = false;
+  ptrArray.forEach(function(temp)
+  {
+    if(value === temp)
+    {
+      returnValue = true;
+    }
+  })
+  return returnValue;
+}
